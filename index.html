@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>PeGa LLC</title>
+</head>
+<body>
+
+    <h1>PeGa LLC</h1>
+
+    <h2>List of employees:</h2>
+
+    <form>
+        <input type="text" name="text" id="txt" required>
+        <button type="submit" class="btn-list">
+            <i class="fa fa-plus"></i>
+        </button>
+    </form>
+    <div class="container">
+        <ul>
+        </ul>
+    </div>
+
+    <script>
+        const inputText = document.querySelector('#txt');
+        const myButton = document.querySelector('.btn-list');
+        const list = document.querySelector('.container ul');
+
+        myButton.addEventListener('click', (e)=>{
+            if(inputText.value != ""){
+                e.preventDefault();
+                // create li
+                const myLi = document.createElement('li');
+                myLi.innerHTML = inputText.value;
+                list.appendChild(myLi);
+
+                // create a span
+                const mySpan = document.createElement('span');
+                mySpan.innerHTML = 'x';
+                myLi.appendChild(mySpan);
+            }
+            const close = document.querySelectorAll('span');
+            for(let i=0; i<close.length; i++){
+                close[i].addEventListener('click', ()=>{
+                    close[i].parentElement.style.opacity = 0;
+                    setTimeout(() => {
+                        
+                        close[i].parentElement.style.display = "none";
+                        close[i].parentElement.remove();
+                    }, 500);
+                })
+            }
+            inputText.value = "";
+        });
+    </script>
+    
+</body>
+</html>
