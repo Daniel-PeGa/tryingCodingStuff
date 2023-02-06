@@ -17,4 +17,14 @@ myButton.addEventListener('click', (e)=>{
     </div>
     `;
     list.appendChild(myLi);
+    localStorage.setItem('employee', myLi);
+    console.log(response);
 });
+
+// var employeeHist = [];
+// $('.btn-list').on('click', function (event) {
+//     event.preventDefault();
+//     employee = $(this);
+//     employeeHist.push(employee);
+//     localStorage.setItem('employee', JSON.stringify(employeeHist));
+// });
