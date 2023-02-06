@@ -37,7 +37,7 @@ myButton.addEventListener('click', (e)=>{
     <h1>${employeeName}</h1>
     <p>${employeeProfession}</p>
     <div class="phone">
-    <p><a href="${employeeNumber}">${employeeNumber}</a></p>
+    <p><a href="tel: ${employeeNumber}">${employeeNumber}</a></p>
     </div>
     `;
     list.appendChild(myLi);
