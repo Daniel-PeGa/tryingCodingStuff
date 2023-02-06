@@ -2,4 +2,4 @@
 
 ## Purpose
 
-For rn, what I want to achieve is to be prompted with the questions about the employees name, profession, phone number, and address, and take that user input to create a new oject. Im doing this on a separate directory because I dont want to mess up the progress I have on that other last one (businessTracker)
+For rn, what i would like to do is to make a phone call once the employee object is created, as well as a choice for color on the employee to know what s/he does
