@@ -20,11 +20,11 @@ form {
     box-shadow: -3px 6px 4px #222;
 }
 form input {
-    width: 250px;
-    height: 40px;
+    width: 0px;
+    height: 0px;
     border: none;
     outline: none;
-    padding: 0 5px;
+    padding: 0px;
 }
 form button {
     width: 50px;
@@ -63,4 +63,8 @@ ul li span{
     width: 50px;
     text-align: center;
     background: red;
+}
+.no-decoration{
+    text-decoration: none;
+    color: black;
 }
