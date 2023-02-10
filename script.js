@@ -17,14 +17,43 @@ myButton.addEventListener('click', (e)=>{
     </div>
     `;
     list.appendChild(myLi);
-    localStorage.setItem('employee', myLi);
-    console.log(response);
+    localStorage.setItem('employee', JSON.stringify(myLi.value));
+    console.log(localStorage);
+    JSON.parse(localStorage.getItem('employee'));
+
+    localStorage.clear();
+
+    // var contHistEl = $('.container');
+
+// function renderHistory() {
+//     contHistEl.empty();
+//     employee = localStorage.getItem('employee');
+
+//     for (let i = 0; i < employee.length; i++) {
+//         var key = localStorage.key(i);
+//         var value = localStorage.getItem(key);
+//         var li = $('<li>');
+//         li.text(value);
+//         contHistEl.append(li);
+//     }
+// };
+
+// renderHistory();
+
 });
 
-// var employeeHist = [];
-// $('.btn-list').on('click', function (event) {
-//     event.preventDefault();
-//     employee = $(this);
-//     employeeHist.push(employee);
-//     localStorage.setItem('employee', JSON.stringify(employeeHist));
-// });
+
+// var contHistEl = $('.container');
+// function renderHistory() {
+//     contHistEl.empty();
+
+//     for (let i = 0; i < employee.length; i++) {
+//         var key = localStorage.key(i);
+//         var value = localStorage.getItem(key);
+//         var li = $('<li>');
+//         li.text(value);
+//         contHistEl.append(li);
+//     }
+// };
+
+// renderHistory();
