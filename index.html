@@ -5,25 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>PeGa LLC</title>
 </head>
 <body>
 
     <h1>PeGa LLC</h1>
 
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter name">
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" placeholder="Enter position">
+        <label for="salary">Phone number:</label>
+        <input type="number" id="phoneNumber" name="salary" placeholder="Enter phone number">
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
     <h2>List of employees:</h2>
 
-    <form>
-        <input type="text" name="text" id="txt" required>
-        <button type="submit" class="btn-list" id="generate">
-            <i class="fa fa-plus"></i>
-        </button>
-    </form>
-    <div class="container">
-        <ul>
-        </ul>
-    </div>
+
     
     <script
 src="https://code.jquery.com/jquery-3.5.1.min.js"

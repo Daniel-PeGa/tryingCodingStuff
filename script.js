@@ -1,50 +1,29 @@
-const myButton = document.querySelector('.btn-list');
-const list = document.querySelector('.container ul');
+var employees = [];
 
-myButton.addEventListener('click', (e)=>{
+const addEmployee = (ev)=>{
+    ev.preventDefault();  //to stop the form submitting
+    let employee = {
+        id: document.getElementById('id').value,
+        name: document.getElementById('name').value,
+        position: document.getElementById('position').value,
+        phone: document.getElementById('phoneNumber').value,
 
-    var employeeName = prompt("What is your employee's name?");
-    var employeeProfession = prompt("What does the employee do?");
-    var employeeNumber = prompt("What is the new employee's phone number?");
+};
 
-    const myLi = document.createElement('li');
-    myLi.innerHTML =
-    `
-    <h1>${employeeName}</h1>
-    <p>${employeeProfession}</p>
-    <div class="phone">
-    <p><a href="tel: ${employeeNumber}" class="no-decoration">${employeeNumber}</a></p>
-    </div>
-    `;
-    list.appendChild(myLi);
+employees.push(employee);
+document.forms[0].reset(); // to clear the form for the next entry
 
-    // localStorage.setItem('employee', JSON.stringify(myLi.value));
-    // console.log(localStorage);
-    // JSON.parse(localStorage.getItem('employee'));
+console.warn('added' , {employees} );
+let pre = document.querySelector('#msg pre');
+pre.textContent = '\n' + JSON.stringify(employees, '\t', 5);
 
-    // localStorage.clear();
+//saving to localStorage
+localStorage.setItem('MyEmployeeList', JSON.stringify(employees) );
+};
 
-    //  I feel like I can make this work
-
-    let myLi_serialized = JSON.stringify(myLi);
-    console.log(myLi_serialized);
-
-
-
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('submit').addEventListener('click', addEmployee);
 });
 
 
-// var contHistEl = $('.container');
-// function renderHistory() {
-//     contHistEl.empty();
-
-//     for (let i = 0; i < employee.length; i++) {
-//         var key = localStorage.key(i);
-//         var value = localStorage.getItem(key);
-//         var li = $('<li>');
-//         li.text(value);
-//         contHistEl.append(li);
-//     }
-// };
-
-// renderHistory();
+//  Andabamos viendo este video: https://www.youtube.com/watch?v=NxVCq4p0Kb0 pa guiarnos con este nuevo proyecto para guardar los elementos en el local Storage
